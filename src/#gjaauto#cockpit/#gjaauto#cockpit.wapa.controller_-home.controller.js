@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/mvc/Controller"],function(o){"use strict";return o.extend("br.com.gja.zui5.gjaauto.cockpit.controller.Home",{onInit:function(){}})});                                                                                              
+//# sourceMappingURL=Home.controller.js.map                                                                                                                                                                                                                    

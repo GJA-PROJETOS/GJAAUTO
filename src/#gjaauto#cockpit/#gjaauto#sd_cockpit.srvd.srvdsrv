@@ -1,0 +1,10 @@
+@EndUserText.label: 'Serv Def Cockipt configs das automações'
+define service /GJAAUTO/SD_COCKPIT {
+  expose /GJAAUTO/CDS_CK_I_Automacoes as Automacoes;
+  expose /GJAAUTO/CDS_CK_I_Operacoes as Operacoes;
+  expose /GJAAUTO/CDS_CK_I_Etapas as Etapas;
+  expose /GJAAUTO/CDS_CK_I_Atribuicoes as Atribuicoes;
+  expose /GJAAUTO/CDS_CK_I_LoopTables as LoopTables;
+  expose /GJAAUTO/CDS_CK_I_MAPEMENTOS as Mapeamentos;
+  expose /GJAAUTO/CDS_CK_I_DADOS as Dados;
+}

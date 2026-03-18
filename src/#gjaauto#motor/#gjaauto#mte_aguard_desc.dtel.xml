@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>/GJAAUTO/MTE_AGUARD_DESC</ROLLNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DOMNAME>/GJAAUTO/MTD_AGUARD_DESC</DOMNAME>
+    <HEADLEN>17</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>17</SCRLEN2>
+    <SCRLEN3>17</SCRLEN3>
+    <DDTEXT>Motivo do aguardo</DDTEXT>
+    <REPTEXT>Motivo do aguardo</REPTEXT>
+    <SCRTEXT_S>MotivoWait</SCRTEXT_S>
+    <SCRTEXT_M>Motivo do aguardo</SCRTEXT_M>
+    <SCRTEXT_L>Motivo do aguardo</SCRTEXT_L>
+    <DTELMASTER>P</DTELMASTER>
+    <REFKIND>D</REFKIND>
+   </DD04V>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,3 @@
+{"version":3,"file":"formatter.js","names":["sap","ui","define","logType","sType","toUpperCase","logState"],"sources":["formatter-dbg.js"],"mappings":"AAAAA,IAAIC,GAAGC,OAAO,GAAI,WAChB,aAEA,MAAO,CAOLC,QAAS,SAAUC,GACjB,IAAKA,EAAO,CACV,MAAO,EACT,CAEA,OAAQA+
+,EAAMC,eACZ,IAAK,IACH,MAAO,UACT,IAAK,IACH,MAAO,OACT,IAAK,IACH,MAAO,QACT,IAAK,IACH,MAAO,OACT,IAAK,IACH,MAAO,UACT,QACE,OAAOD,EAEb,EAQAE,SAAU,SAAUF,GAClB,IAAKA,EAAO,CACV,MAAO,MACT,CAEA,OAAQA,EAAMC,eACZ,IAAK,IACH,MAAO,UACT,IAAK,IACH,MAAO,QACT,IAAK,IACH,MAAO,+
+UACT,IAAK,IACH,MAAO,cACT,IAAK,IACH,MAAO,QACT,QACE,MAAO,OAEb,EAEJ","ignoreList":[]}                                                                                                                                                                             

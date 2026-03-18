@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>/GJAAUTO/BP_CDS_I_ETAPAS</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Behavior Implementation for /GJAAUTO/CDS_I_ETAPAS</DESCRIPT>
+    <CATEGORY>06</CATEGORY>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+    <CLSDEFINT>/GJAAUTO/CDS_I_AUTOMACOES</CLSDEFINT>
+   </VSEOCLASS>
+   <DESCRIPTIONS_CLASS>
+    <SEOCLASSTX>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Behavior Implementation for /GJAAUTO/CDS_I_ETAPAS</DESCRIPT>
+    </SEOCLASSTX>
+   </DESCRIPTIONS_CLASS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

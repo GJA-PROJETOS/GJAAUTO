@@ -1,0 +1,7 @@
+{
+  "BASEINFO": {
+    "FROM": [
+      "/GJAAUTO/CDS_MT_I_HEADERAUTO"
+    ]
+  }
+}

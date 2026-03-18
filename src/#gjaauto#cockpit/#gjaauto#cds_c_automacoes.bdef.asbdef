@@ -1,0 +1,29 @@
+projection;
+strict ( 2 );
+
+define behavior for /GJAAUTO/CDS_C_AUTOMACOES
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _Operacoes { create; }
+}
+
+define behavior for /GJAAUTO/CDS_C_OPERACOES
+{
+  use update;
+  use delete;
+
+  use association _Automacao;
+  use association _Etapas { create; }
+}
+
+define behavior for /GJAAUTO/CDS_C_ETAPAS
+{
+  use update;
+  use delete;
+
+  use association _Operacao;
+  use association _Automacao;
+}

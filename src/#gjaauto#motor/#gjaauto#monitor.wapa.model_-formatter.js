@@ -1,0 +1,3 @@
+sap.ui.define([],function(){"use strict";return{logType:function(r){if(!r){return""}switch(r.toUpperCase()){case"S":return"Sucesso";case"E":return"Erro";case"W":return"Aviso";case"I":return"Info";case"A":return"Abortar";default:return r}},logState:functi+
+on(r){if(!r){return"None"}switch(r.toUpperCase()){case"S":return"Success";case"E":return"Error";case"W":return"Warning";case"I":return"Information";case"A":return"Error";default:return"None"}}}});                                                           
+//# sourceMappingURL=formatter.js.map                                                                                                                                                                                                                          

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Grupo de funções: Execução da automações</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>/GJAAUTO/LMTGF002F01</SOBJ_NAME>
+    <SOBJ_NAME>/GJAAUTO/LMTGF002TOP</SOBJ_NAME>
+    <SOBJ_NAME>/GJAAUTO/SAPLMTGF002</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>/GJAAUTO/MTF006</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Executa automação</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_AUTO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/GJAAUTO/CKE_AUTOMACAO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_OPERA</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/GJAAUTO/CKE_OPERARACAO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_CHAVE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/GJAAUTO/MTE_CHAVE</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_AUTO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Automação</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_OPERA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Operação</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_CHAVE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Chave da automação</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/GJAAUTO/MTF007</FUNCNAME>
+     <SHORT_TEXT>Gera código mapeado</SHORT_TEXT>
+    </item>
+    <item>
+     <FUNCNAME>/GJAAUTO/MTF008</FUNCNAME>
+     <SHORT_TEXT>Defini Status automação</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_CHAVE</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/GJAAUTO/MTE_CHAVE</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>NOT_FOUND</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_CHAVE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Chave da automação</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NOT_FOUND</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>Automação não encontrada</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

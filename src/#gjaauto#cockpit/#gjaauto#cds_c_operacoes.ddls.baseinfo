@@ -1,0 +1,14 @@
+{
+  "BASEINFO": {
+    "FROM": [
+      "/GJAAUTO/CDS_I_OPERACOES"
+    ],
+    "ASSOCIATED": [
+      "/GJAAUTO/CDS_C_AUTOMACOES",
+      "/GJAAUTO/CDS_C_ETAPAS"
+    ],
+    "BASE": [
+      "/GJAAUTO/CDS_I_OPERACOES"
+    ]
+  }
+}

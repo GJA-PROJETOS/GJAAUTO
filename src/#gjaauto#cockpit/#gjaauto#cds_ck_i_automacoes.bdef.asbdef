@@ -1,0 +1,131 @@
+managed implementation in class /gjaauto/bp_cds_ck_i_automacoe unique;
+strict ( 2 );
+
+define behavior for /GJAAUTO/CDS_CK_I_Automacoes //alias <alias_name>
+persistent table /gjaauto/cktb001
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  association _Operacoes { create; }
+}
+
+define behavior for /GJAAUTO/CDS_CK_I_Operacoes //alias <alias_name>
+persistent table /gjaauto/cktb002
+lock dependent by _Automacao
+authorization dependent by _Automacao
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) auto;
+  association _Automacao;
+  association _Dados { create; }
+  association _Etapas { create; }
+}
+
+define behavior for /GJAAUTO/CDS_CK_I_DADOS
+persistent table /gjaauto/cktb005
+lock dependent by _Automacao
+authorization dependent by _Automacao
+{
+  update;
+  delete;
+
+  field ( readonly ) Auto, Opera;
+
+  association _Operacao;
+  association _Automacao;
+
+  mapping for /gjaauto/cktb005
+  {
+    Auto = AUTO;
+    Opera = OPERA;
+    Name = NAME;
+    Reftypname = REFTYPNAME;
+    Reftype = REFTYPE;
+    EtapaBorn = ETAPA_BORN;
+    Datanatu = DATANATU;
+  }
+}
+
+
+define behavior for /GJAAUTO/CDS_CK_I_Etapas //alias <alias_name>
+persistent table /gjaauto/cktb003
+lock dependent by _Automacao
+authorization dependent by _Automacao
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) auto, opera;
+  association _Automacao;
+  association _Operacao;
+  association _Atribuicoes { create; }
+  association _LoopTables { create; }
+  association _Mapeamentos { create; }
+}
+
+define behavior for /GJAAUTO/CDS_CK_I_Atribuicoes
+persistent table /gjaauto/cktb007
+lock dependent by _Automacao
+authorization dependent by _Automacao
+{
+  update;
+  delete;
+
+  field ( readonly ) Auto, Opera, Etapa;
+
+  association _Etapa;
+  association _Automacao;
+  mapping for /gjaauto/cktb007
+  {
+    Auto = AUTO;
+    Opera = OPERA;
+    Etapa = ETAPA;
+    Reftype = REFTYPE;
+    Param = PARAM;
+    ParamFrom = PARAM_FROM;
+  }
+}
+
+define behavior for /GJAAUTO/CDS_CK_I_LoopTables
+persistent table /gjaauto/cktb006
+lock dependent by _Automacao
+authorization dependent by _Automacao
+{
+  update;
+  delete;
+
+  field ( readonly ) Auto, Opera, Etapa;
+
+  association _Etapa;
+  association _Automacao;
+  mapping for /GJAAUTO/CKTB006
+  {
+    Auto = AUTO;
+    Opera = OPERA;
+    Etapa = ETAPA;
+    Reftype = REFTYPE;
+    Param = PARAM;
+    ParamFrom = PARAM_FROM;
+  }
+}
+
+
+define behavior for /GJAAUTO/CDS_CK_I_MAPEMENTOS
+persistent table /gjaauto/cktb004
+lock dependent by _Automacao
+authorization dependent by _Automacao
+{
+  update;
+  delete;
+
+  field ( readonly ) Auto, Opera, Etapa;
+
+  association _Etapas;
+  association _Automacao;
+}

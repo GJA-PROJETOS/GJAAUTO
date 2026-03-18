@@ -1,0 +1,8 @@
+PROCESS BEFORE OUTPUT.
+  MODULE status_9103.
+*
+PROCESS AFTER INPUT.
+  MODULE user_command_9103.
+
+PROCESS ON VALUE-REQUEST.
+  FIELD gw_cktb002-snronr MODULE help_search_snro.

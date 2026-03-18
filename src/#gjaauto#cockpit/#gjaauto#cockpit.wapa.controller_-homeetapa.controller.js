@@ -1,0 +1,3 @@
+sap.ui.define(["sap/ui/core/mvc/Controller"],function(t){"use strict";return t.extend("br.com.gja.zui5.gjaauto.cockpit.controller.HomeEtapa",{onInit:function(){},onEditEtapa:function(){var t=this.getView().getModel("etapa");var e=t?t.getProperty("/etapaD+
+ata"):{};if(!e||!e.auto||!e.opera||!e.etapa){return}this.getOwnerComponent().getCreateEditDialog().openEdit("etapa",e,function(){var t=this.getOwnerComponent().getModel();if(t){t.refresh(true)}}.bind(this))}})});                                           
+//# sourceMappingURL=HomeEtapa.controller.js.map                                                                                                                                                                                                               

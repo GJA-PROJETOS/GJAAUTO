@@ -1,0 +1,10 @@
+{
+  "BASEINFO": {
+    "FROM": [
+      "/GJAAUTO/MTTB002"
+    ],
+    "ASSOCIATED": [
+      "/GJAAUTO/CDS_MT_I_ETAPASAUTO"
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+managed;
+strict ( 2 );
+
+define behavior for /GJAAUTO/CDS_I_Automacoes implementation in class /gjaauto/bp_cds_i_automacoes unique
+persistent table /gjaauto/cktb001
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  association _Operacoes { create; }
+}
+
+define behavior for /GJAAUTO/CDS_I_Operacoes implementation in class /gjaauto/bp_cds_i_operacoes unique
+persistent table /gjaauto/cktb002
+lock dependent by _Automacao
+authorization dependent by _Automacao
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) auto;
+  association _Automacao;
+  association _Etapas { create; }
+}
+
+define behavior for /GJAAUTO/CDS_I_Etapas implementation in class /gjaauto/bp_cds_i_etapas unique
+persistent table /gjaauto/cktb003
+lock dependent by _Automacao
+authorization dependent by _Automacao
+{
+  update;
+  delete;
+
+  field ( readonly ) auto, opera;
+
+  association _Operacao;
+  association _Automacao;
+}

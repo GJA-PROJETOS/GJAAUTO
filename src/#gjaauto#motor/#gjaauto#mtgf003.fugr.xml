@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Grupo de funções: Funções auxiliares</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>/GJAAUTO/LMTGF003TOP</SOBJ_NAME>
+    <SOBJ_NAME>/GJAAUTO/SAPLMTGF003</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>/GJAAUTO/MTF009</FUNCNAME>
+     <SHORT_TEXT>Verifica o status de liberação (aprovação) de uma requisição de compras</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_BANFN</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>BANFN</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_MOTIVO</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/GJAAUTO/MTE_AGUARDANDO</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>RETURN</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_BANFN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº requisição de compra</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_MOTIVO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Aguardando</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Parâmetro de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/GJAAUTO/MTF010</FUNCNAME>
+     <SHORT_TEXT>Verifica o status de liberação (aprovação) de um pedido de compras</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_EBELN</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>EBELN</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_MOTIVO</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/GJAAUTO/MTE_AGUARDANDO</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>RETURN</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_EBELN</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_MOTIVO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Aguardando</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Parâmetro de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

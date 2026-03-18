@@ -1,0 +1,11 @@
+{
+  "BASEINFO": {
+    "FROM": [
+      "/GJAAUTO/CKTB005"
+    ],
+    "ASSOCIATED": [
+      "/GJAAUTO/CDS_CK_I_AUTOMACOES",
+      "/GJAAUTO/CDS_CK_I_OPERACOES"
+    ]
+  }
+}
