@@ -99,7 +99,7 @@ ENDCLASS.
 
 
 
-CLASS /gjaauto/cl_main_dpc_ext IMPLEMENTATION.
+CLASS /GJAAUTO/CL_MAIN_DPC_EXT IMPLEMENTATION.
 
 
   METHOD keysautomacao_get_entityset.
@@ -163,35 +163,40 @@ CLASS /gjaauto/cl_main_dpc_ext IMPLEMENTATION.
 
     IF ls_input-chave IS INITIAL.
       RETURN.
+    ELSEIF ls_input-chave EQ 'ALL'.
+      SUBMIT /gjaauto/mtj0002.
+    ELSE.
+
+
+      " Abre o Job para execução em background
+      CALL FUNCTION 'JOB_OPEN'
+        EXPORTING
+          jobname  = gc_job_name
+        IMPORTING
+          jobcount = lv_jobcount
+        EXCEPTIONS
+          OTHERS   = 1.
+
+      CHECK sy-subrc = 0.
+
+      " Submete o programa de automação
+      SUBMIT /gjaauto/mtj0002
+        WITH p_chave = ls_input-chave
+        USER sy-uname
+        VIA JOB gc_job_name
+        NUMBER lv_jobcount
+        AND RETURN.
+
+      " Fecha e inicia o Job imediatamente
+      CALL FUNCTION 'JOB_CLOSE'
+        EXPORTING
+          jobname   = gc_job_name
+          jobcount  = lv_jobcount
+          strtimmed = abap_true
+        EXCEPTIONS
+          OTHERS    = 1.
+
     ENDIF.
-
-    " Abre o Job para execução em background
-    CALL FUNCTION 'JOB_OPEN'
-      EXPORTING
-        jobname  = gc_job_name
-      IMPORTING
-        jobcount = lv_jobcount
-      EXCEPTIONS
-        OTHERS   = 1.
-
-    CHECK sy-subrc = 0.
-
-    " Submete o programa de automação
-    SUBMIT /gjaauto/mtj0002
-      WITH p_chave = ls_input-chave
-      USER sy-uname
-      VIA JOB gc_job_name
-      NUMBER lv_jobcount
-      AND RETURN.
-
-    " Fecha e inicia o Job imediatamente
-    CALL FUNCTION 'JOB_CLOSE'
-      EXPORTING
-        jobname   = gc_job_name
-        jobcount  = lv_jobcount
-        strtimmed = abap_true
-      EXCEPTIONS
-        OTHERS    = 1.
   ENDMETHOD.
 
 
@@ -366,6 +371,7 @@ CLASS /gjaauto/cl_main_dpc_ext IMPLEMENTATION.
         fieldname = iv_fieldname ) ).
   ENDMETHOD.
 
+
   METHOD process_check_table_values.
     "----------------------------------------------------------------------
     " Processa valores de tabela de verificação dinâmica
@@ -450,6 +456,7 @@ CLASS /gjaauto/cl_main_dpc_ext IMPLEMENTATION.
       import        = lt_import_parameter
       tables        = lt_tables_parameter ).
   ENDMETHOD.
+
 
   METHOD process_param_table_type.
     "----------------------------------------------------------------------
