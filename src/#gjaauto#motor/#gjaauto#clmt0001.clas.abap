@@ -24,6 +24,7 @@ CLASS /gjaauto/clmt0001 DEFINITION
     METHODS factory
       RETURNING VALUE(et_code) TYPE tt_code.
 
+protected section.
   PRIVATE SECTION.
     DATA gv_chave             TYPE /gjaauto/mte_chave.
     DATA gv_auto              TYPE /gjaauto/cke_automacao.
@@ -74,7 +75,10 @@ CLASS /gjaauto/clmt0001 DEFINITION
 ENDCLASS.
 
 
-CLASS /gjaauto/clmt0001 IMPLEMENTATION.
+
+CLASS /GJAAUTO/CLMT0001 IMPLEMENTATION.
+
+
   METHOD constructor.
     gv_chave = iv_chave.
 
@@ -90,6 +94,7 @@ CLASS /gjaauto/clmt0001 IMPLEMENTATION.
       RAISE auto_not_found.
     ENDIF.
   ENDMETHOD.
+
 
   METHOD load_auto_data.
     SELECT * FROM /gjaauto/cktb003
@@ -156,6 +161,7 @@ CLASS /gjaauto/clmt0001 IMPLEMENTATION.
         AND opera = gv_opera.
   ENDMETHOD.
 
+
   METHOD codegen_init_data_definition.
     APPEND '"Declaração das variaveis' TO gt_code.
     APPEND 'DATA:' TO gt_code.
@@ -192,6 +198,7 @@ CLASS /gjaauto/clmt0001 IMPLEMENTATION.
     APPEND |AND chave EQ '{ gv_chave }'.| TO gt_code.
   ENDMETHOD.
 
+
   METHOD replace_last_comma_with_dot.
     FIELD-SYMBOLS <lv_line> TYPE string.
 
@@ -211,6 +218,7 @@ CLASS /gjaauto/clmt0001 IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
 
   METHOD codegen_select_initial_data.
     "------------------------------------------------------------
@@ -246,6 +254,7 @@ CLASS /gjaauto/clmt0001 IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
 
   METHOD codegen_etapa.
     APPEND |"*╔═════════════════════════════════════════════════════════════════════*| TO gt_code.
@@ -308,6 +317,7 @@ CLASS /gjaauto/clmt0001 IMPLEMENTATION.
     " Gera código pós chamada da função
     codegen_after_call_function( iw_etapa = iw_etapa ).
   ENDMETHOD.
+
 
   METHOD codegen_before_call_funtion.
     " ╔════════════════════════════════════════════════════════════════════╗
@@ -589,6 +599,7 @@ CLASS /gjaauto/clmt0001 IMPLEMENTATION.
 *                      data_origin    = lv_parameter ) TO et_declare_vars.
   ENDMETHOD.
 
+
   METHOD codegen_call_function.
     APPEND |has_error = abap_false.| TO gt_code.
     APPEND |TRY.| TO gt_code.
@@ -696,6 +707,7 @@ CLASS /gjaauto/clmt0001 IMPLEMENTATION.
     APPEND |  has_error = abap_true.| TO gt_code.
     APPEND |ENDTRY.| TO gt_code.
   ENDMETHOD.
+
 
   METHOD codegen_after_call_function.
     CASE iw_etapa-after.
@@ -805,6 +817,7 @@ CLASS /gjaauto/clmt0001 IMPLEMENTATION.
     APPEND |*└─────────────────────────────────────────────────────────────────────*| TO gt_code.
   ENDMETHOD.
 
+
   METHOD factory.
     APPEND |REPORT Z{ gv_chave }.| TO gt_code.
 
@@ -860,6 +873,7 @@ CLASS /gjaauto/clmt0001 IMPLEMENTATION.
 
     et_code = gt_code.
   ENDMETHOD.
+
 
   METHOD get_paramval.
     DATA(lv_raw_value) = is_mapeamento-paramval.
