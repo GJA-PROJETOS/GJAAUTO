@@ -4,27 +4,27 @@
   <asx:values>
    <SRVB>
     <METADATA>
-     <NAME>/GJAAUTO/SB_MONITOR</NAME>
+     <NAME>/GJAAUTO/CK_SB_COCKPIT</NAME>
      <TYPE>SRVB/SVB</TYPE>
     </METADATA>
     <CONTENT>
      <BIND_TYPE_IMPL>
-      <NAME>/GJAAUTO/SB_MONITOR</NAME>
+      <NAME>/GJAAUTO/CK_SB_COCKPIT</NAME>
      </BIND_TYPE_IMPL>
      <BIND_TYPE>ODATA</BIND_TYPE>
      <BIND_TYPE_CATEGORY>1</BIND_TYPE_CATEGORY>
      <BIND_TYPE_VERSION>V2</BIND_TYPE_VERSION>
      <SERVICES>
       <item>
-       <SERVICE_NAME>/GJAAUTO/SB_MONITOR</SERVICE_NAME>
+       <SERVICE_NAME>/GJAAUTO/CK_SB_COCKPIT</SERVICE_NAME>
        <SERVICE_CONTENT>
         <item>
          <SERVICE_VERSION>0001</SERVICE_VERSION>
          <RELEASE_STATE>NOT_RELEASED</RELEASE_STATE>
          <SRVD_REF>
-          <URI>/sap/bc/adt/ddic/srvd/sources/%2fgjaauto%2fsd_monitor</URI>
+          <URI>/sap/bc/adt/ddic/srvd/sources/%2fgjaauto%2fck_sd_cockpit</URI>
           <TYPE>SRVD/SRV</TYPE>
-          <NAME>/GJAAUTO/SD_MONITOR</NAME>
+          <NAME>/GJAAUTO/CK_SD_COCKPIT</NAME>
          </SRVD_REF>
          <BIND_TYPE_DATA>
           <CONTENT>

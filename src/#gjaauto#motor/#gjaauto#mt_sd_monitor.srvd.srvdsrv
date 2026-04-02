@@ -1,5 +1,5 @@
-@EndUserText.label: 'Service Definition Monitor'
-define service /GJAAUTO/SD_MONITOR {
+@EndUserText.label: 'Monitor: Service Definition'
+define service /GJAAUTO/MT_SD_MONITOR {
   expose /GJAAUTO/CDS_MT_I_HeaderAuto as Header;
   expose /GJAAUTO/CDS_MT_I_EtapasAuto as Etapas;
   expose /GJAAUTO/CDS_MT_I_Logs as Logs;
