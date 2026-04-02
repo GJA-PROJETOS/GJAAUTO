@@ -7,4 +7,5 @@ define service /GJAAUTO/SD_COCKPIT {
   expose /GJAAUTO/CDS_CK_I_LoopTables as LoopTables;
   expose /GJAAUTO/CDS_CK_I_MAPEMENTOS as Mapeamentos;
   expose /GJAAUTO/CDS_CK_I_DADOS as Dados;
+  expose /GJAAUTO/CDS_CK_I_MTV_AGRDND as Motivo_Agurdando;
 }

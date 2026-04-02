@@ -1,6 +1,7 @@
 {
   "BASEINFO": {
     "FROM": [
+      "/GJAAUTO/CDS_CK_I_MTV_AGRDND",
       "/GJAAUTO/CKTB003",
       "/GJAAUTO/MTTB003"
     ],

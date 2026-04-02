@@ -9,27 +9,34 @@
 define view entity /GJAAUTO/CDS_MT_I_EtapasAuto
   as select from /gjaauto/mttb003
 
-  association        to parent /GJAAUTO/CDS_MT_I_HeaderAuto as _HeaderAuto on  $projection.Auto  = _HeaderAuto.Auto
-                                                                           and $projection.Opera = _HeaderAuto.Opera
-                                                                           and $projection.Chave = _HeaderAuto.Chave
+  association           to parent /GJAAUTO/CDS_MT_I_HeaderAuto as _HeaderAuto
+    on  $projection.Auto  = _HeaderAuto.Auto
+    and $projection.Opera = _HeaderAuto.Opera
+    and $projection.Chave = _HeaderAuto.Chave
 
-  composition [0..*] of /GJAAUTO/CDS_MT_I_Logs              as _Logs
+  composition [0..*] of           /GJAAUTO/CDS_MT_I_Logs       as _Logs
 
-  association [1..1] to /gjaauto/cktb003                    as _Etapa      on  $projection.Auto  = _Etapa.auto
-                                                                           and $projection.Opera = _Etapa.opera
-                                                                           and $projection.Etapa = _Etapa.etapa
+  association [1..1]    to        /gjaauto/cktb003             as _Etapa
+    on  $projection.Auto  = _Etapa.auto
+    and $projection.Opera = _Etapa.opera
+    and $projection.Etapa = _Etapa.etapa
+
+  association [0..1]    to        /GJAAUTO/CDS_CK_I_MTV_AGRDND as _Mtv_Agrdnd
+    on $projection.Waitm = _Mtv_Agrdnd.Waitm
+
 {
-  key auto         as Auto,
-  key opera        as Opera,
-  key chave        as Chave,
-  key etapa        as Etapa,
+  key auto              as Auto,
+  key opera             as Opera,
+  key chave             as Chave,
+  key etapa             as Etapa,
 
-      credat       as Credat,
-      cretim       as Cretim,
-      crenam       as Crenam,
-      status       as Status,
-      waitm        as Waitm,
-      _Etapa.descr as Etapa_Descr,
+      credat            as Credat,
+      cretim            as Cretim,
+      crenam            as Crenam,
+      status            as Status,
+      waitm             as Waitm,
+      _Mtv_Agrdnd.Waitt as Waitt,
+      _Etapa.descr      as Etapa_Descr,
 
       _HeaderAuto,
       _Logs
